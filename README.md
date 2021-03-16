@@ -17,7 +17,7 @@ The script uses a few environment variables for interacting with the DNS Service
 
 ```
 # CD to the directory with these scripts
-cd ~/certbot-oci-scripts
+cd ~/certbot-oci-hooks
 
 # Set an ENV variable for the compartment ID
 set -gx OCI_COMPARTMENT_ID "ocid1.tenancy.oc1..aaaa...uq3bgq"
