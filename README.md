@@ -13,7 +13,7 @@ You will use standard Certbot CLI commands when using these hooks.  They will be
 The script uses a few environment variables for interacting with the DNS Service:
 
 1. `OCI_COMPARTMENT_ID` - Can be any comparment or the root tenancy.
-2. `DNS_ZONE` - The DNS zone name where the acme DNS record will be added for validation.
+2. `DNS_ZONE` - The DNS zone where the acme DNS record will be added for validation.
 
 ```
 # CD to the directory with these scripts
@@ -23,7 +23,7 @@ cd ~/certbot-oci-hooks
 set -gx OCI_COMPARTMENT_ID "ocid1.tenancy.oc1..aaaa...uq3bgq"
 
 # Set the DNS zone to add the record
-set -gx DNS_ZONE "yourdomain.com" # change based on domain
+set -gx DNS_ZONE "yourdomain.com" # change based on DNS Zone
 
 # Run the certbot command -- test cert and dry run flags supplied for testing before you run
 certbot certonly \
@@ -33,7 +33,7 @@ certbot certonly \
     --manual-cleanup-hook (pwd)/cleanup-hook.sh \
     --agree-tos \
     --email <your email address> \
-    -d <your domain -- wildcard or single domain> \
+    -d <your domain -- root domain, sub domain, or wildcard> \
     --test-cert \
     --dry-run
 ```
