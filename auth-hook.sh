@@ -20,8 +20,8 @@ if set -q $DNS_ZONE
 end
 
 # Certbot env vars in case they are needed for reference
-echo "Certbot Domain: $CERTBOT_DOMAIN"
-echo "Certbot Validation: $CERTBOT_VALIDATION"
+#echo "Certbot Domain: $CERTBOT_DOMAIN"
+#echo "Certbot Validation: $CERTBOT_VALIDATION"
 #echo $CERTBOT_TOKEN
 #echo $CERTBOT_REMAINING_CHALLENGES
 #echo $CERTBOT_ALL_DOMAINS
@@ -41,6 +41,7 @@ echo "DNS entry created"
 #echo $OCI_RECORD | prettyjson
 
 echo "Sleeping to wait for DNS propogation"
+
 sleep 20
 
 echo "Auth hook script complete!"
